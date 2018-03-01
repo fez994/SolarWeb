@@ -1,0 +1,16 @@
+.head {
+	padding-top: 2em;
+	padding-bottom: 3em;
+}
+
+
+
+#btn {
+	margin-top: 0.28em;
+	border-color: black;
+	background-color: transparent;
+}
+
+.searchbtn {
+	text-align: center;
+}
