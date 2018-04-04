@@ -25,13 +25,35 @@ function lfc () {
 
 	// requesting data from the lat and lon coordinades 
 	function useCoordinates(lat, lon){
-		var myApi = "https://api.solcast.com.au/radiation/forecasts?longitude="+lon+"&latitude="+lat+"&api_key=fB0Zk_1cWKWI8clCSe98ZyBTWctbcyR3&format=json&callback=?";
-		$.getJSON(myApi, function(forecasts) {
-			console.log(forecasts);
+
+		// For the solcast forum: I tried both method, they all give me the same error 
+		
+		
+		$.ajax({
+			type: "Get",
+			url: "https://api.solcast.com.au/radiation/forecasts?longitude="+lon+"&latitude="+lat+"&api_key=fB0Zk_1cWKWI8clCSe98ZyBTWctbcyR3&format=json?&callback=?",
+			dataType: "jsonp",
+			jsonp: false,
+			jsonpCallback: "myJsonMethod",
+			success: function(data) {
+				console.log(data);
+			},
+			error: function() {
+				console.log("It doesn't work");
+			}
+
+		});
+	
+
+	/*
+		var myApi = "https://api.solcast.com.au/radiation/forecasts?longitude="+lon+"&latitude="+lat+"&api_key=fB0Zk_1cWKWI8clCSe98ZyBTWctbcyR3&format=json?&callback=?";
+		$.getJSON(myApi, function(data) {
+			console.log(data);
 		});
 
+	*/
 	}
-
+	
 
 } // end lfc
 
