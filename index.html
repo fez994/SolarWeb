@@ -1,103 +1,78 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Solar Project</title>
-	<meta charset="utf-8">
-     <!-- CSS -->
-     <link rel="stylesheet" type="text/css" href="css/style.css">
-     <!-- Bootstrap -->
-     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-</head>
-<body>
-
-<div class="head">
-	<h1 class="text-center">Title</h1>
-</div>
-
-<!-- dividing the page into different columns so that it is easier to organize the submit box -->
-
-<div class="container">
-	<div class="row">
-		<div class="col-xs-4 col-md-4 col-xl-4">
-			<div class="address-form">
-
-				<!-- Adress submit box -->
-				<div class="form-group">
-				<label for="address">Address</label>
-				<input type="text" name="address" class="form-control" id="address">
-				</div>
-
-				
-			</div>
-		</div>
-		<!-- Zip code Box -->
-		<div class="col-xs-2 col-md-2 col-xl-2">
-			<div class="zip-code-form">
-				<!-- Zip code submit box -->
-				<div class="form-group">
-				<label for="zip">Zip Code</label>
-				<input type="text" name="zip" class="form-control">
-				</div>
-			</div>
-		</div>
-
-
-		<!-- Kw/h Box -->
-		
-		<div class="col-xs-2 col-md-2 col-xl-2">
-			<div class="kw-form">
-				<!-- kw/h submit box -->
-				<div class="form-group input-append">
-				<label for="kw">Kw/h Needed</label>
-				<input type="text" name="kw" class="form-control">
-				</div>
-			</div>
-		</div>
-
-		<!-- m^2 Box -->
-		<div class="col-xs-2 col-md-2 col-xl-2">
-			<div class="sqrm-form">
-				<div class="form-group">
-					<label for="sqrm">m^2 Available</label>
-					<input type="text" name="sqrm" class="form-control">
-				</div>
-			</div>
-		</div>
-
-		<!-- Search BTN -->
-		<div class="col-xs-2 col-md-2 col-xl-2">
-			<div class="searchbtn">
-				</br>
-				<button class="btn glyphicon glyphicon-search" id="btn"></button>
-			</div>
-		</div>
-
-
-
-
-
-	</div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--Jquery -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<!--Script -->
-<script src="js/index.js"></script>
-
-
-</body>
+   <head>
+      <title>Solar Project</title>
+      <meta charset="utf-8">
+      <!-- CSS -->
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+      <!-- Bootstrap -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+   </head>
+   <body>
+      <div class="head">
+         <h1 class="text-center">Title</h1>
+      </div>
+      <!-- dividing the page into different columns so that it is easier to organize the submit box -->
+      <div class="container">
+         <div class="row">
+            <div class="col-xs-4 col-md-4 col-xl-4">
+               <div class="address-form">
+                  <!-- Adress submit box -->
+                  <div class="form-group">
+                     <label for="address">Address</label>
+                     <input type="text" name="address" class="form-control" id="address">
+                  </div>
+               </div>
+            </div>
+            <!-- PV Type Dropdown -->
+            <div class="col-xs-2 col-md-2 col-xl-2">
+               <div class="dropdown">
+                  <label for="pv">PV Type</label>
+                  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                  Choose PV Type
+                  <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" id="dropdown-menu">
+                     <li><a href="#" data-value="action">Monocrystalline silicon</a></li>
+                     <li><a href="#" data-value="another action">Poly-crystalline silicon</a></li>
+                     <li><a href="#" data-value="something else here">Amorphous Silicon</a></li>
+                  </ul>
+               </div>
+            </div>
+            <!-- Kw/h Box -->
+            <div class="col-xs-2 col-md-2 col-xl-2">
+               <div class="kw-form">
+                  <!-- kw/h submit box -->
+                  <div class="form-group input-append">
+                     <label for="kw">Kw/h Needed</label>
+                     <input type="text" name="kw" class="form-control">
+                  </div>
+               </div>
+            </div>
+            <!-- m^2 Box -->
+            <div class="col-xs-2 col-md-2 col-xl-2">
+               <div class="sqrm-form">
+                  <div class="form-group">
+                     <label for="sqrm">m^2 Available</label>
+                     <input type="text" name="sqrm" class="form-control">
+                  </div>
+               </div>
+            </div>
+            <!-- Search BTN -->
+            <div class="col-xs-2 col-md-2 col-xl-2">
+               <div class="searchbtn">
+                  </br>
+                  <button class="btn glyphicon glyphicon-search" id="btn"></button>
+               </div>
+            </div>
+         </div>
+      </div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <!--Jquery -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+      <!-- bootstrap -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+      <!--Script -->
+      <script src="js/index.js"></script>
+   </body>
 </html>
