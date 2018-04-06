@@ -22,72 +22,16 @@ function lfc () {
 
 	useCoordinates(lat, lon);
 	});
-
+	
 	// requesting data from the lat and lon coordinades 
 	function useCoordinates(lat, lon){
-
-		// For the solcast forum: I tried both method, they all give me the same error 
-		
-		
-		$.ajax({
-			type: "Get",
-			url: "https://api.solcast.com.au/radiation/forecasts?longitude="+lon+"&latitude="+lat+"&api_key=fB0Zk_1cWKWI8clCSe98ZyBTWctbcyR3&format=json?&callback=?",
-			dataType: "jsonp",
-			jsonp: false,
-			jsonpCallback: "myJsonMethod",
-			success: function(data) {
-				console.log(data);
-			},
-			error: function() {
-				console.log("It doesn't work");
-			}
-
-		});
-	
-
-	/*
-		var myApi = "https://api.solcast.com.au/radiation/forecasts?longitude="+lon+"&latitude="+lat+"&api_key=fB0Zk_1cWKWI8clCSe98ZyBTWctbcyR3&format=json?&callback=?";
-		$.getJSON(myApi, function(data) {
-			console.log(data);
-		});
-
-	*/
+		const proxyurl = "https://cors-anywhere.herokuapp.com/";
+		const url = 'https://api.solcast.com.au/radiation/forecasts?format=json&latitude=' + lat +'&longitude='+ lon +'&api_key=fB0Zk_1cWKWI8clCSe98ZyBTWctbcyR3'; // site that doesn’t send Access-Control-*
+		fetch(proxyurl + url)
+		.then(response => response.text())
+		.then(contents => alert(contents))
+		.catch(() => console.log("Can’t access " + url + " response. Blocked by browser?"))
 	}
-	
-
 } // end lfc
 
-
-
-
 }); // end document ready function
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
