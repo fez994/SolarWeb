@@ -32,10 +32,10 @@
                   Choose PV Type
                   <span class="caret"></span>
                   </button>
-                  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" id="dropdown-menu">
-                     <li><a href="#" data-value="action">Monocrystalline silicon</a></li>
-                     <li><a href="#" data-value="another action">Poly-crystalline silicon</a></li>
-                     <li><a href="#" data-value="something else here">Amorphous Silicon</a></li>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                     <li><a href="#" data-value="16%" value="Monocrystalline Silicon" title="0.16">Monocrystalline silicon</a></li>
+                     <li><a href="#" data-value="14%" value="Poli Crystallin silicon" title="0.14">Poly-crystalline silicon</a></li>
+                     <li><a href="#" data-value="6%" value="Amorphous Silicon" title="0.06">Amorphous Silicon</a></li>
                   </ul>
                </div>
             </div>
@@ -67,6 +67,25 @@
             </div>
          </div>
       </div>
+
+
+      <!-- Actual Results Page -->
+      <div class="container">
+         <div class="actuals">
+            <h3>Actual Data</h3>
+            <p>The performance for <span id="pv_type"></span> <span id="performance"></span> , at your current position, the total irradiance is : <span id="irradiance-data"></span> , wich mean you'll have an avarage of <span id="kw-available"></span></p>
+         </div>
+      </div>
+
+
+      <!-- Solar Panel Plant worth or not -->
+      <div class="container">
+         <div class="plant">
+            <h3>Is a solar power plant worth it?</h3>
+            <p>Maybe</p>
+         </div>
+      </div>
+
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
       <!--Jquery -->
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>

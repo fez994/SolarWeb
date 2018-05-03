@@ -1,11 +1,22 @@
 $(document).ready(function(){
 
+// Hiding the data div to display it later
+$('.actuals').hide();
+$('.plant').hide();
+
+
+
 // Dropdown Menu
 
 $(".dropdown-menu li a").click(function(){
   $(this).parents(".dropdown").find('.btn').html($(this).text() + ' <span class="caret"></span>');
   $(this).parents(".dropdown").find('.btn').val($(this).data('value'));
+  window.g = $(this).attr("value");
+  window.n = $(this).attr("data-value");
+  window.v = $(this).attr("title");
+		console.log(v);
 });
+
 
 
 $('#btn').click(function() {
@@ -39,11 +50,24 @@ function lfc () {
 			console.log("The global Horizontal Irradiance is " + contents.forecasts[0].ghi + " W/m2");
 			console.log("The direct normal irradiance is " + contents.forecasts[0].dni + " W/m2");
 			console.log("The diffuse horizontal irradiance is " + contents.forecasts[0].dhi + " W/m2");
-			var iTot  = eval(contents.forecasts[0].ghi + contents.forecasts[0].dni + contents.forecasts[0].dhi);
-			console.log(iTot);
-
+			console.log(contents);
+			var ghi = contents.forecasts[0].ghi;
+			var dni = contents.forecasts[0].dni;
+			var dhi = contents.forecasts[0].dhi;
+			useData(ghi, dni, dhi);
+			
 		})
 		.catch(() => console.log("Can’t access " + url + " response. Blocked by browser?"));
+	}
+
+	// Displaying Data
+	function useData(ghi, dni, dhi) {
+		var sum = ghi + dni + dhi;
+		$('#pv_type').text(g);
+		$('#performance').text(" is " + n);
+		$('#irradiance-data').text(sum + " W/m^2 ");
+		$('#kw-available').text(Math.round(sum * v ) + " W/m^2 ");
+		$('.actuals').show();
 	}
 	
 } // end lfc
