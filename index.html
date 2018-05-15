@@ -39,22 +39,12 @@
                   </ul>
                </div>
             </div>
-            <!-- Kw/h Box -->
-            <div class="col-xs-2 col-md-2 col-xl-2">
-               <div class="kw-form">
-                  <!-- kw/h submit box -->
-                  <div class="form-group input-append">
-                     <label for="kw">Kw/h Needed</label>
-                     <input type="text" name="kw" class="form-control">
-                  </div>
-               </div>
-            </div>
             <!-- m^2 Box -->
             <div class="col-xs-2 col-md-2 col-xl-2">
                <div class="sqrm-form">
                   <div class="form-group">
-                     <label for="sqrm">m^2 Available</label>
-                     <input type="text" name="sqrm" class="form-control">
+                     <label for="sqrm">m^2 of panels</label>
+                     <input type="text" name="sqrm" class="form-control" id="sqrm">
                   </div>
                </div>
             </div>
@@ -69,22 +59,21 @@
       </div>
 
 
+      <!-- Introduction Page -->
+      <div class="container">
+         <h3>What is this project about</h3>
+         <p>The goal with this project is to know how much your power plant is producing at any given time. Just complete the above form with your address (ex: "Alber einstein street, city, nation") , choose the type of pv you have installed on your roof, and the total number of panels in square meteres. Hit the search button and get the data! </p>
+      </div>
+
       <!-- Actual Results Page -->
       <div class="container">
-         <div class="actuals">
+         <div class="actuals hidden">
             <h3>Actual Data</h3>
-            <p>The performance for <span id="pv_type"></span> <span id="performance"></span> , at your current position, the total irradiance is : <span id="irradiance-data"></span> , wich mean you'll have an avarage of <span id="kw-available"></span></p>
+            <p>The performance for <span id="pv_type"></span> <span id="performance"></span> , at your current position, the total irradiance is : <span id="irradiance-data"></span> , wich mean you'll have an average of <span id="kw-available"></span> . </p>
          </div>
       </div>
 
 
-      <!-- Solar Panel Plant worth or not -->
-      <div class="container">
-         <div class="plant">
-            <h3>Is a solar power plant worth it?</h3>
-            <p>Maybe</p>
-         </div>
-      </div>
 
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
       <!--Jquery -->

@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
 // Hiding the data div to display it later
-$('.actuals').hide();
+//$('.actuals').hide();
 $('.plant').hide();
 
 
@@ -14,7 +14,7 @@ $(".dropdown-menu li a").click(function(){
   window.g = $(this).attr("value");
   window.n = $(this).attr("data-value");
   window.v = $(this).attr("title");
-		console.log(v);
+		//console.log(v);
 });
 
 
@@ -47,10 +47,9 @@ function lfc () {
 		fetch(proxyurl + url)
 		.then(response => response.json())
 		.then(contents =>  {
-			console.log("The global Horizontal Irradiance is " + contents.forecasts[0].ghi + " W/m2");
-			console.log("The direct normal irradiance is " + contents.forecasts[0].dni + " W/m2");
-			console.log("The diffuse horizontal irradiance is " + contents.forecasts[0].dhi + " W/m2");
-			console.log(contents);
+			//console.log("The global Horizontal Irradiance is " + contents.forecasts[0].ghi + " W/m2");
+			//console.log("The direct normal irradiance is " + contents.forecasts[0].dni + " W/m2");
+			//console.log("The diffuse horizontal irradiance is " + contents.forecasts[0].dhi + " W/m2");
 			var ghi = contents.forecasts[0].ghi;
 			var dni = contents.forecasts[0].dni;
 			var dhi = contents.forecasts[0].dhi;
@@ -63,11 +62,14 @@ function lfc () {
 	// Displaying Data
 	function useData(ghi, dni, dhi) {
 		var sum = ghi + dni + dhi;
+		var panels = $('#sqrm').serializeArray();
+		var sqrm = document.getElementById("sqrm").value;
 		$('#pv_type').text(g);
 		$('#performance').text(" is " + n);
 		$('#irradiance-data').text(sum + " W/m^2 ");
-		$('#kw-available').text(Math.round(sum * v ) + " W/m^2 ");
-		$('.actuals').show();
+		$('#kw-available').text(Math.round(sum * v ) + " W/m^2 " + "You have a total of " + sqrm + " square meters of panels, wich means you're pv plant is producing  " + Math.round( sum * v * sqrm) + " W/m^2");
+		$('.actuals').removeClass('hidden');
+
 	}
 	
 } // end lfc
