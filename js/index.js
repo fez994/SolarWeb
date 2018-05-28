@@ -11,7 +11,6 @@ $("#arrow").click(function() {
 });
 
 
-
 // Dropdown Menu
  window.run = function() {
  	var myselect = document.getElementById("dropdown-menu");
@@ -69,7 +68,7 @@ function lfc () {
 		var panels = $('#sqrm').serializeArray();
 		var sqrm = document.getElementById("sqrm").value;
 		// Displaying type of pv
-		$('#pv_type').text(g);
+		$('#pv_type').text(g + ".");
 		// Displaying performance in % of the pv
 		$('#performance').text(" is " + n);
 		// Displaying the total irradiance value
@@ -77,7 +76,7 @@ function lfc () {
 		// Total irradiance * performance of the panel to get how much a single panel is producing
 		var totalKw = Math.round(sum * v);
 		// Displaying the data for the single panel and multiplying it for the number of square meters of solar panels
-		$('#kw-available').text(totalKw + " W/m^2 " + "You have a total of " + sqrm + " square meters of panels, wich means you're pv plant is producing  " + (totalKw * sqrm) + " W");
+		$('#kw-available').text(totalKw + " W/m^2 " + "You have a total of " + sqrm + " square meters of panels, wich means your pv plant is producing  " + (totalKw * sqrm) + " W");
 		// Showing the data to the user
 		$('.actuals').removeClass('hidden');
 		// smooth scroll to show the results div

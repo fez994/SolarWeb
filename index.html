@@ -1,157 +1,113 @@
 <!DOCTYPE html>
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Solar Web</title>
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-      <!-- Bulma Version 0.7.1-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css" />
-    <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Solar Web</title>
+   <!-- Bootstrap -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+   <!-- Bulma Version 0.7.1-->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css" />
+   <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js"></script>
+   <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
-
 <body>
-    <section class="hero header-image is-fullheight ">
+   <section class="hero header-image is-fullheight ">
       <div class="hero-body">
          <div class="container">
             <h1 class="title" id="title">SOLAR WEB</h1>
             <h2 class="subtitle">A simple website that estimate the production of your pv plant</h2>
          </div>
       </div>
-
-       <div class="hero-foot">
+      <div class="hero-foot">
          <div class="container">
             <div class="footer-image">
-               <a href="#"><img class="arrow" id="arrow" src="https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_keyboard_arrow_down_48px-128.png" /></a></div>
+               <a href="#"><img class="arrow" id="arrow" src="https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_keyboard_arrow_down_48px-128.png" /></a>
+            </div>
          </div>
       </div>
-        
-    </section>
-
-<!-- Middle section after full page img -->
-    <div class="container" id="myDiv">
-       <h1 class="middle-title">Produce your own clean energy</h1>
-       <p class="middle-subtitle">Solar panels produce renewable clean energy while securing low utility rates.</p>
-    </div>
-
-
-    <div class="columns is-mobile">
+   </section>
+   <!-- Middle section after full page img -->
+   <div class="container" id="myDiv">
+      <h1 class="middle-title">Produce your own clean energy</h1>
+      <p class="middle-subtitle">Solar panels produce renewable clean energy while securing low utility rates.</p>
+   </div>
+   <div class="columns is-mobile">
       <!-- first column -->
-  <div class="column" id="no-padding">
-      <img src="img/solar_house.jpg" class="middle-img">
-  </div>
+      <div class="column" id="no-padding">
+         <img src="img/solar_house.jpg" class="middle-img">
+      </div>
       <!-- second column -->
-  <div class="column" id="second-column">
-      <h1 id="middle-title">What is this project about?</h1>
+      <div class="column" id="second-column">
+         <h1 id="middle-title">What is this project about?</h1>
+         <br>
+         <p class="middle-subtitle">The goal with this project is to know how much your power plant is producing at this exact moment.</p>
+      </div>
+   </div>
+   <!-- How does it work section -->
+   <div class="container">
+      <h1 class="middle-title">
+         How does it work?
+      </h1>
       <br>
-      <p class="middle-subtitle">The goal with this project is to know how much your power plant is producing at this exact moment.</p>
-
-  </div>
-</div>
-
-<!-- How does it work section -->
-<div class="container">
-   <h1 class="middle-title">
-      How does it work?
-   </h1>
-   <br>
       <p class="middle-subtitle">
          Fill the form below with your address (ex: "Albert Einstein street, city, nation") , choose the type of pv you have installed on your roof, and the total number of panels in square meteres. Hit the search button and get the data!
       </p>
-</div>
-
-<!-- Form Section -->
-
-
+   </div>
+   <!-- Form Section -->
    <div class="columns">
-
       <!-- Address -->
-   
-   <div class="column" id="padding-left">
-      <label for="address" class="label">Address</label>
-      <input type="text" name="address" class="form-control input" id="address" placeholder="Address">
-   </div>
-
-
-<div class="column" id="padding-left">
-      <label for="sqrm" class="label">Square meters of panels</label>
-      <input type="text" name="sqrm" class="form-control input" id="sqrm" placeholder="Square Meters">
-   </div>
-
-
-<!-- pv type -->
-   <div class="column" id="padding-left">
-      <div class="field">
-  <label class="label">Pv-type</label>
-  <div class="control">
-    <div class="select">
-      <select id="dropdown-menu" onchange="run()">
-       <option value="0">Choose your pv type</option>
-        <option data-value="16%" value="Monocrystalline Silicon" title="0.16">Monocrystalline silicon</option>
-        <option data-value="14%" value="Poli Crystallin silicon" title="0.14">Policrystalline silicon</option>
-        <option data-value="6%" value="Amorphous Silicon" title="0.06">Amorphous Silicon</option>
-      </select>
-    </div>
-  </div>
-</div>
-   </div>
-
-
-
-
-<!-- Search Column -->
-
-<div class="column" id="padding-left">
-   
-   <div class="field is-grouped">
-  <div class="control">
-   <label class="label" id="invisible">Label</label>
-    <button class="button is-link" id="btn">SEARCH</button>
-  </div>
-</div>
-
-
-</div>
-
-
-
-
-</div> <!-- end columns --> 
-
-
-<br>
-<br>
-
-
-
-
-
-
-<div class="container">
-   <div class="actuals hidden" id="results">
-            <h3 class="middle-title">Actual Data</h3>
-            <br>
-            <br>
-            <p class="middle-subtitle">The performance for <span id="pv_type"></span> <span id="performance"></span> , at your current position, the total irradiance is : <span id="irradiance-data"></span> , wich mean you'll have an average of <span id="kw-available"></span> . </p>
+      <div class="column" id="padding-left">
+         <label for="address" class="label">Address</label>
+         <input type="text" name="address" class="form-control input" id="address" placeholder="Address">
+      </div>
+      <div class="column" id="padding-left">
+         <label for="sqrm" class="label">Square meters of panels</label>
+         <input type="text" name="sqrm" class="form-control input" id="sqrm" placeholder="Square Meters">
+      </div>
+      <!-- pv type -->
+      <div class="column" id="padding-left">
+         <div class="field">
+            <label class="label">Pv-type</label>
+            <div class="control">
+               <div class="select">
+                  <select id="dropdown-menu" onchange="run()">
+                     <option value="0">Choose your pv type</option>
+                     <option data-value="16%" value="Monocrystalline Silicon" title="0.16">Monocrystalline silicon</option>
+                     <option data-value="14%" value="Poli Crystallin silicon" title="0.14">Policrystalline silicon</option>
+                     <option data-value="6%" value="Amorphous Silicon" title="0.06">Amorphous Silicon</option>
+                  </select>
+               </div>
+            </div>
          </div>
-</div>
-
-
-
-
-
-
-
-
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-      <!--Jquery -->
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-      <!-- bootstrap -->
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-      <!--Script -->
-      <script src="js/index.js"></script>
+      </div>
+      <!-- Search Column -->
+      <div class="column" id="padding-left">
+         <div class="field is-grouped">
+            <div class="control">
+               <label class="label" id="invisible">Label</label>
+               <button class="button is-link" id="btn">SEARCH</button>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- end columns --> 
+   <br>
+   <br>
+   <div class="container">
+      <div class="actuals hidden" id="results">
+         <h3 class="middle-title">Current Data</h3>
+         <br>
+         <p class="middle-subtitle">The performance for <span id="pv_type"></span> <span id="performance"></span> . 
+            At your current position, the total irradiance is : <span id="irradiance-data"></span> , wich means you'll have an average of <span id="kw-available"></span> . 
+         </p>
+      </div>
+   </div>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+   <!--Jquery -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+   <!-- bootstrap -->
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+   <!--Script -->
+   <script src="js/index.js"></script>
 </body>
