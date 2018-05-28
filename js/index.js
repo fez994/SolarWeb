@@ -3,19 +3,26 @@ $(document).ready(function(){
 // Hiding the data div to display it later
 $('.plant').hide();
 
+// Arrow Scroll on click
+$("#arrow").click(function() {
+    $('html, body').animate({
+        scrollTop: $("#myDiv").offset().top
+    }, 2000);
+});
+
 
 
 // Dropdown Menu
-$(".dropdown-menu li a").click(function(){
-  $(this).parents(".dropdown").find('.btn').html($(this).text() + ' <span class="caret"></span>');
-  $(this).parents(".dropdown").find('.btn').val($(this).data('value'));
-  // Type of pv
-  window.g = $(this).attr("value");
-  // Performance percentage
-  window.n = $(this).attr("data-value");
-  // Performance percentage divided by 100, so if performance 16%  => 0.16
-  window.v = $(this).attr("title");	
-});
+ window.run = function() {
+ 	var myselect = document.getElementById("dropdown-menu");
+ 	// Type of pv
+ 	window.g = (myselect.options[myselect.selectedIndex].value);
+ 	// Performance percentage
+ 	window.n = (myselect.options[myselect.selectedIndex].getAttribute('data-value'));
+ 	// Performance percentage divided by 100, so if performance 16%  => 0.16
+ 	window.v = (myselect.options[myselect.selectedIndex].getAttribute('title'));
+ 
+ }
 
 
 // starting lfc when the search button is pressed
@@ -73,7 +80,12 @@ function lfc () {
 		$('#kw-available').text(totalKw + " W/m^2 " + "You have a total of " + sqrm + " square meters of panels, wich means you're pv plant is producing  " + (totalKw * sqrm) + " W");
 		// Showing the data to the user
 		$('.actuals').removeClass('hidden');
+		// smooth scroll to show the results div
+		$('html, body').animate({
+        scrollTop: $("#results").offset().top
+    	}, 2000);
 	}	
+
 } // end lfc
 
 }); // end document ready function
