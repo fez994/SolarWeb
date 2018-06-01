@@ -55,13 +55,15 @@ function lfc () {
 			var dni = contents.forecasts[0].dni;
 			// Diffuse Horizontal Irradiance
 			var dhi = contents.forecasts[0].dhi;
-			useData(ghi, dni, dhi);
+			// Air temperature
+			var airTemp = contents.forecasts[0].air_temp
+			useData(ghi, dni, dhi, airTemp);
 		})
 		.catch(() => console.log("Can’t access " + url + " response. Blocked by browser?"));
 	}
 
 	// Displaying Data
-	function useData(ghi, dni, dhi) {
+	function useData(ghi, dni, dhi, airTemp) {
 		// Total Value of the Irradiance
 		var sum = ghi + dni + dhi;
 		// Getting the data of how many m^2 of panel the user have
@@ -77,6 +79,8 @@ function lfc () {
 		var totalKw = Math.round(sum * v);
 		// Displaying the data for the single panel and multiplying it for the number of square meters of solar panels
 		$('#kw-available').text(totalKw + " W/m^2 " + "You have a total of " + sqrm + " square meters of panels, wich means your pv plant is producing  " + (totalKw * sqrm) + " W");
+		// Displaying air temp data 
+		$('#air-temp').text(airTemp);
 		// Showing the data to the user
 		$('.actuals').removeClass('hidden');
 		// smooth scroll to show the results div
