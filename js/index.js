@@ -51,21 +51,17 @@ function lfc () {
 		.then(contents =>  {
 			// Global Horizontal Irradiance
 			var ghi = contents.forecasts[0].ghi;
-			// Direct Normal Irradiance 
-			var dni = contents.forecasts[0].dni;
-			// Diffuse Horizontal Irradiance
-			var dhi = contents.forecasts[0].dhi;
 			// Air temperature
 			var airTemp = contents.forecasts[0].air_temp
-			useData(ghi, dni, dhi, airTemp);
+			useData(ghi, airTemp);
 		})
 		.catch(() => console.log("Can’t access " + url + " response. Blocked by browser?"));
 	}
 
 	// Displaying Data
-	function useData(ghi, dni, dhi, airTemp) {
+	function useData(ghi, airTemp) {
 		// Total Value of the Irradiance
-		var sum = ghi + dni + dhi;
+		var sum = ghi;
 		// Getting the data of how many m^2 of panel the user have
 		var panels = $('#sqrm').serializeArray();
 		var sqrm = document.getElementById("sqrm").value;
