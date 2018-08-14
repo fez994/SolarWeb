@@ -41,7 +41,15 @@ depending on the brand of the solar panel), direct damage of the panel etc.
 
 One last note: i used the Solcast API to get the solar radiation data, at the moment (August 2018) the API is free to use because is still in development, 
 but there is an high chance that it will turn into a pay API in the future, 
-and therefore the project will no longer work. 
+and therefore the project will no longer work.  
+
+
+Here is a quick gif on how the project works, just in case it gets turned down in the future: 
+
+
+
+
+<img src="https://image.ibb.co/euvTqp/how_dos_it_work.gif">
 
 
 
