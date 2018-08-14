@@ -36,7 +36,7 @@ EEL = n * I
 
 
 By doing so we can provide the user an estimation of the energy production (in W ). I say "estimation" because there are different factors 
-that can influence the prevision. Ex: dirty solar panels, temperature (for every 1°c above 25 ° C the output decrease by 0.something , 
+that can influence the estimation. Ex: dirty solar panels, temperature (for every 1°c above 25 ° C the output decrease by 0.something , 
 depending on the brand of the solar panel), direct damage of the panel etc.  
 
 One last note: i used the Solcast API to get the solar radiation data, at the moment (August 2018) the API is free to use because is still in development, 
